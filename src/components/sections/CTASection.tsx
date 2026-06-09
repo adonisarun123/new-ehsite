@@ -19,7 +19,7 @@ export function CTASection({
     <section className="section">
       <div className="container-page">
         <div className="overflow-hidden rounded-3xl bg-brand-deep px-6 py-12 text-center text-white sm:px-12">
-          <h2 className="mx-auto max-w-2xl font-heading text-2xl font-bold sm:text-3xl">
+          <h2 className="mx-auto max-w-2xl font-heading text-2xl font-bold text-white sm:text-3xl">
             {title}
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-white/80">{description}</p>

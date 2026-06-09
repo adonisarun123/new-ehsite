@@ -51,7 +51,7 @@ export default async function CityPage({ params }: Params) {
         breadcrumbs={[{ name: city.name, href: `/cities/${city.slug}` }]}
       />
 
-      <section className="section">
+      <section className="pb-14 pt-8 sm:pb-20">
         <div className="container-page space-y-10">
           <AnswerBlock>{city.intro}</AnswerBlock>
 

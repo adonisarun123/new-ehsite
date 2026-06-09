@@ -7,7 +7,7 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { SectionHeading } from "@/components/sections/SectionHeading";
-import { ListBlock } from "@/components/sections/ListBlock";
+import { Check } from "lucide-react";
 import { getAllCareServices } from "@/features/services/queries";
 import { buildMetadata } from "@/features/seo/metadata";
 
@@ -67,8 +67,9 @@ export default async function CareServicesPage() {
         tone="care"
       />
 
-      <section className="section">
-        <div className="container-page space-y-8">
+      {/* Answer + scope sit close to the hero (reduced top padding) */}
+      <section className="pb-14 pt-8 sm:pb-20">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <AnswerBlock>
             EzyHelpers provides trained caregiver and attendant support at home in Bangalore for
             elders, patients, and recovering family members. Caregivers help with daily routines,
@@ -76,21 +77,34 @@ export default async function CareServicesPage() {
             diagnosis and treatment stay with qualified doctors and nurses.
           </AnswerBlock>
           <MedicalScopeNote />
-          <div>
-            <SectionHeading title="Choose the care you need" />
-            <div className="mt-8">
-              <CareConditionCards services={careServices} />
-            </div>
+        </div>
+        <div className="container-page mt-12">
+          <SectionHeading title="Choose the care you need" />
+          <div className="mt-8">
+            <CareConditionCards services={careServices} />
           </div>
         </div>
       </section>
 
       <section className="section bg-brand-mint/40">
-        <div className="container-page">
-          <SectionHeading title="How to choose the right caregiver" />
-          <div className="mt-8 max-w-2xl">
-            <ListBlock title="A quick guide" items={CHOOSE_RIGHT} />
+        <div className="container-page grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
+          <div>
+            <SectionHeading
+              title="How to choose the right caregiver"
+              description="A few quick things to consider before you decide — our team helps you with all of them during the free consultation."
+            />
           </div>
+          <ul className="space-y-3">
+            {CHOOSE_RIGHT.map((item) => (
+              <li
+                key={item}
+                className="flex items-start gap-3 rounded-xl border border-edge bg-white p-4 shadow-card"
+              >
+                <Check className="mt-0.5 h-5 w-5 flex-shrink-0 text-brand" aria-hidden />
+                <span className="text-[0.975rem] leading-relaxed text-ink/85">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
 

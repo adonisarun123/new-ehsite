@@ -19,8 +19,10 @@
     line-height: 1.65;
   }
 
+  /* Headings inherit color from body (text-ink) so a parent `text-white`
+     on dark bands cascades correctly. Don't hard-set color here. */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading text-ink;
+    @apply font-heading;
     text-wrap: balance;
   }
 

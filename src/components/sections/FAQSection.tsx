@@ -22,9 +22,13 @@ export function FAQSection({
     <section className="section" aria-labelledby="faq-heading">
       <div className="container-page">
         <JsonLd data={faqSchema(faqs)} />
-        <SectionHeading title={title} description={description} />
-        <div className="mt-8 max-w-3xl">
-          <Accordion items={faqs} trackContext={trackContext} />
+        <div className="mx-auto max-w-3xl">
+          {(title || description) && (
+            <SectionHeading title={title} description={description} center />
+          )}
+          <div className="mt-8">
+            <Accordion items={faqs} trackContext={trackContext} />
+          </div>
         </div>
       </div>
     </section>

@@ -8,7 +8,7 @@ import { track } from "@/lib/utils/analytics";
 /** Sticky Call / WhatsApp / Enquire bar on mobile (spec §12.1). */
 export function StickyMobileCTA() {
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-edge bg-white/95 backdrop-blur lg:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-40 border-t border-edge bg-white/95 backdrop-blur xl:hidden">
       <div className="grid grid-cols-3 divide-x divide-edge">
         <a
           href={telHref()}

@@ -58,7 +58,7 @@ export default async function LocalityPage({ params }: Params) {
         ]}
       />
 
-      <section className="section">
+      <section className="pb-14 pt-8 sm:pb-20">
         <div className="container-page space-y-10">
           <AnswerBlock>
             EzyHelpers provides verified caregivers and home helpers in {locality.name}, {city.name}

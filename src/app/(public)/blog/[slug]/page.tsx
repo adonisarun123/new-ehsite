@@ -144,7 +144,7 @@ export default async function BlogPostPage({ params }: Params) {
 
             {/* Related service CTA */}
             <div className="rounded-3xl bg-brand-deep px-6 py-8 text-center text-white">
-              <h2 className="font-heading text-xl font-semibold">Need this kind of support at home?</h2>
+              <h2 className="font-heading text-xl font-semibold text-white">Need this kind of support at home?</h2>
               <p className="mx-auto mt-2 max-w-md text-white/80">
                 EzyHelpers can help your family find verified, trained support in Bangalore.
               </p>

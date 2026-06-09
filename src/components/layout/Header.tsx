@@ -28,7 +28,7 @@ export function Header() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary">
           {MAIN_NAV.map((item) => (
             <div
               key={item.label}
@@ -39,7 +39,7 @@ export function Header() {
               {item.children ? (
                 <>
                   <button
-                    className="flex items-center gap-1 rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-mint hover:text-brand-deep"
+                    className="flex items-center gap-1 whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-mint hover:text-brand-deep"
                     aria-expanded={openMenu === item.label}
                     aria-haspopup="true"
                     onClick={() =>
@@ -77,7 +77,7 @@ export function Header() {
               ) : (
                 <Link
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-mint hover:text-brand-deep"
+                  className="whitespace-nowrap rounded-lg px-3 py-2 text-sm font-medium text-ink hover:bg-brand-mint hover:text-brand-deep"
                 >
                   {item.label}
                 </Link>
@@ -87,7 +87,7 @@ export function Header() {
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden items-center gap-2 lg:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <CallButton size="sm" />
           <WhatsAppButton size="sm" />
           <Button href="/contact" variant="cta" size="sm">
@@ -97,7 +97,7 @@ export function Header() {
 
         {/* Mobile toggle */}
         <button
-          className="flex h-11 w-11 items-center justify-center rounded-xl border border-edge lg:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-xl border border-edge xl:hidden"
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((o) => !o)}

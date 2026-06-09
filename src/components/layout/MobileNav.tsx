@@ -18,7 +18,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
   if (!open) return null;
 
   return (
-    <div className="lg:hidden">
+    <div className="xl:hidden">
       <nav
         className="container-page max-h-[calc(100vh-4rem)] overflow-y-auto border-t border-edge bg-white py-4"
         aria-label="Mobile"

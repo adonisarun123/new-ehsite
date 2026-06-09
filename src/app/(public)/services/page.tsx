@@ -28,7 +28,7 @@ export default async function AllServicesPage() {
         subtitle="EzyHelpers brings together trained caregiving support and verified home help for families in Bangalore."
         breadcrumbs={[{ name: "Services", href: "/services" }]}
       />
-      <section className="section">
+      <section className="pb-14 pt-8 sm:pb-20">
         <div className="container-page space-y-10">
           <AnswerBlock>
             EzyHelpers offers two kinds of support in Bangalore: trained caregiving for elders,
