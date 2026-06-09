@@ -1,7 +1,25 @@
 import Link from "next/link";
-import { HeartHandshake, Phone, Mail, MapPin } from "lucide-react";
-import { BRAND, MEDICAL_SCOPE_NOTE } from "@/lib/constants/brand";
-import { telHref } from "@/lib/utils/phone";
+import {
+  HeartHandshake,
+  Phone,
+  Mail,
+  MapPin,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube,
+  MessageCircle,
+  BadgeCheck,
+} from "lucide-react";
+import { BRAND, MEDICAL_SCOPE_NOTE, CREDIBILITY_NOTE } from "@/lib/constants/brand";
+import { telHref, whatsappHref } from "@/lib/utils/phone";
+
+const SOCIAL = [
+  { label: "Facebook", href: BRAND.social.facebook, icon: Facebook },
+  { label: "Instagram", href: BRAND.social.instagram, icon: Instagram },
+  { label: "LinkedIn", href: BRAND.social.linkedin, icon: Linkedin },
+  { label: "YouTube", href: BRAND.social.youtube, icon: Youtube },
+].filter((s) => s.href);
 
 const careLinks = [
   { label: "Elderly Care", href: "/care-services/elderly-care" },
@@ -86,6 +104,31 @@ export function Footer() {
                 <MapPin className="h-4 w-4" aria-hidden /> Bangalore, India
               </p>
             </div>
+
+            {/* Social links */}
+            <div className="mt-5 flex items-center gap-2">
+              {SOCIAL.map((s) => (
+                <a
+                  key={s.label}
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={s.label}
+                  className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+                >
+                  <s.icon className="h-4 w-4" aria-hidden />
+                </a>
+              ))}
+              <a
+                href={whatsappHref()}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+                className="flex h-9 w-9 items-center justify-center rounded-lg bg-white/10 text-white/80 transition-colors hover:bg-white/20 hover:text-white"
+              >
+                <MessageCircle className="h-4 w-4" aria-hidden />
+              </a>
+            </div>
           </div>
 
           {/* Link columns */}
@@ -98,8 +141,14 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Credibility / accreditation (from live site) */}
+        <div className="mt-10 flex items-start gap-3 rounded-2xl bg-white/5 p-4 text-sm leading-relaxed text-white/75">
+          <BadgeCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-white/80" aria-hidden />
+          <p>{CREDIBILITY_NOTE}</p>
+        </div>
+
         {/* Caregiving scope disclaimer (spec §7.2) */}
-        <div className="mt-10 rounded-2xl bg-white/5 p-4 text-xs leading-relaxed text-white/65">
+        <div className="mt-4 rounded-2xl bg-white/5 p-4 text-xs leading-relaxed text-white/65">
           <strong className="text-white/80">Care scope:</strong> {MEDICAL_SCOPE_NOTE}
         </div>
 

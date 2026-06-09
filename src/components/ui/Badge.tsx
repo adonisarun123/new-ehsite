@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils/cn";
 
-type Tone = "brand" | "care" | "cream" | "neutral" | "cta";
+type Tone = "brand" | "care" | "cream" | "neutral" | "cta" | "accent";
 
 const tones: Record<Tone, string> = {
   brand: "bg-brand-mint text-brand-deep",
@@ -8,6 +8,7 @@ const tones: Record<Tone, string> = {
   cream: "bg-cream text-[#8A6D2F]",
   neutral: "bg-edge/40 text-muted",
   cta: "bg-cta/15 text-[#8A5A06]",
+  accent: "bg-accent/10 text-accent",
 };
 
 interface BadgeProps {

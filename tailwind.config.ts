@@ -5,18 +5,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // EzyHelpers brand system (spec §11.2)
+        // EzyHelpers brand system — matched to www.ezyhelpers.com (blue-led).
+        // `brand` is the primary blue; `mint` is now a soft blue tint so existing
+        // bg-brand-mint usages become light-blue surfaces.
         brand: {
-          DEFAULT: "#1F7A53", // Primary Green
-          deep: "#145C3E", // Deep Trust Green
-          mint: "#EEF8F2", // Soft Mint Background
+          DEFAULT: "#0074C8", // Primary Blue
+          deep: "#005EA6", // Deep Trust Blue (links, headings on light)
+          mint: "#EAF4FF", // Soft Blue surface
         },
-        cream: "#FFF8EC", // Warm Cream
-        care: "#EAF4FF", // Care Blue
-        ink: "#17211B", // Text Charcoal
-        muted: "#5E6B63", // Muted Text
-        edge: "#DCE8DF", // Soft Border
-        cta: "#F59E0B", // CTA Orange
+        // Green/teal accent — caregiving, verified, Call-to-action trust cues.
+        accent: {
+          DEFAULT: "#16A34A", // Trust/verified green
+          deep: "#04514F", // Deep teal (live top bar)
+          soft: "#E6FFFE", // Mint surface
+        },
+        cream: "#FFF8EC", // Warm Cream (kept for childcare/warm sections)
+        care: "#E6F4FF", // Care Blue (soft)
+        ink: "#2B2B2B", // Text Charcoal (live body text)
+        muted: "#4B5563", // Muted Text
+        edge: "#DCE7F2", // Soft Border (cool)
+        cta: "#F59E0B", // CTA Orange accent
         danger: "#DC2626", // Error Red
         ok: "#16A34A", // Success Green
       },
@@ -30,9 +38,9 @@ const config: Config = {
         "3xl": "1.75rem",
       },
       boxShadow: {
-        soft: "0 4px 20px -4px rgba(20, 92, 62, 0.12)",
-        card: "0 2px 12px -2px rgba(23, 33, 27, 0.08)",
-        lift: "0 12px 32px -8px rgba(20, 92, 62, 0.18)",
+        soft: "0 4px 20px -4px rgba(0, 94, 166, 0.14)",
+        card: "0 2px 12px -2px rgba(43, 43, 43, 0.08)",
+        lift: "0 12px 32px -8px rgba(0, 94, 166, 0.20)",
       },
       maxWidth: {
         prose: "70ch",

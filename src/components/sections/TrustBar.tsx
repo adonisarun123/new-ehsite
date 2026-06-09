@@ -14,7 +14,7 @@ export function TrustBar() {
       <div className="container-page grid grid-cols-2 gap-4 py-6 sm:grid-cols-4">
         {POINTS.map((p) => (
           <div key={p.label} className="flex items-center gap-3">
-            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-brand-mint text-brand-deep">
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
               <p.icon className="h-5 w-5" aria-hidden />
             </span>
             <span className="text-sm font-medium text-ink">{p.label}</span>

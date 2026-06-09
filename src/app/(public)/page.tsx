@@ -2,6 +2,8 @@ import Link from "next/link";
 import { Hero } from "@/components/sections/Hero";
 import { QuickServiceSelector } from "@/components/sections/QuickServiceSelector";
 import { TrustBar } from "@/components/sections/TrustBar";
+import { StatsBar } from "@/components/sections/StatsBar";
+import { WhyTrust } from "@/components/sections/WhyTrust";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { CareConditionCards } from "@/components/sections/CareConditionCards";
 import { ServiceCards } from "@/components/sections/ServiceCards";
@@ -9,11 +11,10 @@ import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { Button } from "@/components/ui/Button";
-import { Card } from "@/components/ui/Card";
 import { getAllCareServices, getAllServices } from "@/features/services/queries";
 import { GENERAL_FAQS } from "@/content/seed-faqs";
 import { BANGALORE_LOCALITIES } from "@/lib/constants/locations";
-import { HeartHandshake, MapPin, Briefcase, ShieldCheck } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 
 const HELP_PROCESS = [
   { title: "Tell us your need", description: "Share the service, timing, and location through a quick enquiry, call, or WhatsApp." },
@@ -32,6 +33,7 @@ export default async function HomePage() {
       <Hero />
       <QuickServiceSelector />
       <TrustBar />
+      <StatsBar />
 
       {/* Caregiving-first block (spec §12.1 §5) */}
       <section className="section" aria-labelledby="care-heading">
@@ -73,32 +75,8 @@ export default async function HomePage() {
 
       <ProcessSteps steps={HELP_PROCESS} eyebrow="Simple & supported" />
 
-      {/* Why families trust EzyHelpers */}
-      <section className="section" aria-labelledby="why-heading">
-        <div className="container-page">
-          <SectionHeading
-            center
-            eyebrow="Why EzyHelpers"
-            title="A structured, caring alternative to informal hiring"
-          />
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              { icon: ShieldCheck, title: "Verified & screened", body: "Identity and background checks before any placement, with experience verified during screening." },
-              { icon: HeartHandshake, title: "Trained & respectful", body: "Caregivers and helpers trained for safe, hygienic, respectful daily support." },
-              { icon: MapPin, title: "Local to Bangalore", body: "Support across major Bangalore localities, apartments, and working-family communities." },
-              { icon: Briefcase, title: "Fair to helpers", body: "We support helpers and caregivers with safe, dignified, commission-free work." },
-            ].map((c) => (
-              <Card key={c.title}>
-                <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-brand-mint text-brand-deep">
-                  <c.icon className="h-5 w-5" aria-hidden />
-                </span>
-                <h3 className="font-heading text-lg font-semibold text-ink">{c.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted">{c.body}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Why families trust EzyHelpers (mirrors live site) */}
+      <WhyTrust />
 
       {/* City / locality coverage */}
       <section className="section bg-brand-mint/40" aria-labelledby="coverage-heading">
