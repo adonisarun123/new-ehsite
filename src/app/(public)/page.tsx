@@ -4,6 +4,8 @@ import { QuickServiceSelector } from "@/components/sections/QuickServiceSelector
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { WhyTrust } from "@/components/sections/WhyTrust";
+import { Accreditations } from "@/components/sections/Accreditations";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { SectionHeading } from "@/components/sections/SectionHeading";
 import { CareConditionCards } from "@/components/sections/CareConditionCards";
 import { ServiceCards } from "@/components/sections/ServiceCards";
@@ -78,6 +80,9 @@ export default async function HomePage() {
       {/* Why families trust EzyHelpers (mirrors live site) */}
       <WhyTrust />
 
+      {/* Government / skill-council accreditations */}
+      <Accreditations />
+
       {/* City / locality coverage */}
       <section className="section bg-brand-mint/40" aria-labelledby="coverage-heading">
         <div className="container-page">
@@ -131,6 +136,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Customer testimonials (real reviews from live site) */}
+      <Testimonials />
 
       <FAQSection faqs={GENERAL_FAQS.slice(0, 6)} trackContext="homepage" />
 

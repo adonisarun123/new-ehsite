@@ -38,6 +38,15 @@ export const RATING_BADGE = "Rated 4.8/5 by 10,000+ families";
 export const CREDIBILITY_NOTE =
   "EzyHelpers is a DPIIT-recognised startup, affiliated with India's national skill development ecosystem (DWSSC) — so every helper we place is part of a formally trained, verified workforce.";
 
+/** Government / skill-council accreditations shown on the homepage (from live site). */
+export const ACCREDITATIONS = [
+  { src: "/affiliations/skill-india.svg", label: "National Skill Development Mission", alt: "Skill India" },
+  { src: "/affiliations/ministry.svg", label: "Government of India", alt: "Ministry of Skill Development & Entrepreneurship" },
+  { src: "/affiliations/startup-india.png", label: "Govt. of India startup recognition", alt: "Startup India — DPIIT Recognised" },
+  { src: "/affiliations/nsdc.svg", label: "National Skill Development Corporation", alt: "NSDC" },
+  { src: "/affiliations/hmcgssc.png", label: "Home Management & Care Givers Sector Skill Council", alt: "HMCGSSC" },
+] as const;
+
 /** Reusable non-clinical scope note (spec §4.3). */
 export const MEDICAL_SCOPE_NOTE =
   "EzyHelpers provides trained caregiver and attendant support for daily living, comfort, safety, mobility, hygiene, companionship, and family coordination. This is not a replacement for medical diagnosis, emergency care, or treatment by doctors, nurses, or hospitals.";

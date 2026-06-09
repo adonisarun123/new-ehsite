@@ -1,6 +1,6 @@
 import Link from "next/link";
+import Image from "next/image";
 import {
-  HeartHandshake,
   Phone,
   Mail,
   MapPin,
@@ -84,11 +84,18 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand summary */}
           <div className="lg:col-span-3">
-            <Link href="/" className="flex items-center gap-2">
-              <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-white/15">
-                <HeartHandshake className="h-5 w-5" aria-hidden />
-              </span>
-              <span className="font-heading text-xl font-bold">{BRAND.name}</span>
+            <Link
+              href="/"
+              className="inline-flex items-center rounded-xl bg-white px-3 py-2"
+              aria-label={`${BRAND.name} home`}
+            >
+              <Image
+                src="/logos/ezyhelpers-logo.png"
+                alt={`${BRAND.name} logo`}
+                width={96}
+                height={93}
+                className="h-10 w-auto"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-white/75">
               {BRAND.description}

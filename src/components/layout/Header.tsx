@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { ChevronDown, Menu, X, HeartHandshake } from "lucide-react";
+import Image from "next/image";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { MAIN_NAV } from "@/lib/constants/navigation";
 import { BRAND } from "@/lib/constants/brand";
 import { Button } from "@/components/ui/Button";
@@ -18,13 +19,15 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-edge bg-white/95 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2" aria-label={`${BRAND.name} home`}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand text-white">
-            <HeartHandshake className="h-5 w-5" aria-hidden />
-          </span>
-          <span className="font-heading text-xl font-bold text-brand-deep">
-            {BRAND.name}
-          </span>
+        <Link href="/" className="flex items-center" aria-label={`${BRAND.name} home`}>
+          <Image
+            src="/logos/ezyhelpers-logo.png"
+            alt={`${BRAND.name} logo`}
+            width={96}
+            height={93}
+            priority
+            className="h-11 w-auto lg:h-12"
+          />
         </Link>
 
         {/* Desktop nav */}
