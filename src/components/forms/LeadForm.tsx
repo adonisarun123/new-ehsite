@@ -157,40 +157,56 @@ export function LeadForm({
         error={errors.service_interest?.[0]}
       />
 
-      <div className={compact ? "space-y-4" : "grid gap-4 sm:grid-cols-2"}>
+      {/* Compact (hero/sidebar) shows only City as the 4th essential field.
+          The full form keeps Locality alongside it. */}
+      {compact ? (
         <Input label="City" name="city" defaultValue={defaultCity} required error={errors.city?.[0]} />
-        <Input label="Locality / area" name="locality" defaultValue={defaultLocality} />
-      </div>
-
-      {/* Progressive disclosure for care needs (spec §16.2) */}
-      {showCareFields && (
-        <div className="space-y-4 rounded-2xl border border-care bg-care/40 p-4">
-          <p className="text-sm font-medium text-[#23456b]">A few care details (optional)</p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Input label="Patient / elder age" name="patient_age" inputMode="numeric" />
-            <Select
-              label="Urgency"
-              name="care_urgency"
-              placeholder="Select urgency"
-              options={URGENCY_OPTIONS.map((o) => ({ value: o, label: o }))}
-            />
-          </div>
-          <Input
-            label="Condition or support required"
-            name="care_condition"
-            placeholder="e.g. mobility help, dementia support, post-surgery care"
-          />
+      ) : (
+        <div className="grid gap-4 sm:grid-cols-2">
+          <Input label="City" name="city" defaultValue={defaultCity} required error={errors.city?.[0]} />
+          <Input label="Locality / area" name="locality" defaultValue={defaultLocality} />
         </div>
       )}
 
-      <Select
-        label="Preferred contact method"
-        name="preferred_contact_method"
-        placeholder="How should we reach you?"
-        options={CONTACT_METHODS.map((o) => ({ value: o, label: o }))}
-      />
+      {/* Detailed fields only on the full form — keeps the hero card short.
+          The team gathers these on the call-back (see reassurance below). */}
+      {!compact && (
+        <>
+          {/* Progressive disclosure for care needs (spec §16.2) */}
+          {showCareFields && (
+            <div className="space-y-4 rounded-2xl border border-care bg-care/40 p-4">
+              <p className="text-sm font-medium text-[#23456b]">A few care details (optional)</p>
+              <div className="grid gap-4 sm:grid-cols-2">
+                <Input label="Patient / elder age" name="patient_age" inputMode="numeric" />
+                <Select
+                  label="Urgency"
+                  name="care_urgency"
+                  placeholder="Select urgency"
+                  options={URGENCY_OPTIONS.map((o) => ({ value: o, label: o }))}
+                />
+              </div>
+              <Input
+                label="Condition or support required"
+                name="care_condition"
+                placeholder="e.g. mobility help, dementia support, post-surgery care"
+              />
+            </div>
+          )}
 
-      <Textarea label="Message (optional)" name="message" placeholder="Tell us a little about your requirement" />
+          <Select
+            label="Preferred contact method"
+            name="preferred_contact_method"
+            placeholder="How should we reach you?"
+            options={CONTACT_METHODS.map((o) => ({ value: o, label: o }))}
+          />
+
+          <Textarea
+            label="Message (optional)"
+            name="message"
+            placeholder="Tell us a little about your requirement"
+          />
+        </>
+      )}
 
       {formError && (
         <p role="alert" className="text-sm font-medium text-danger">
@@ -204,8 +220,9 @@ export function LeadForm({
 
       <p className="flex items-start gap-2 text-xs leading-relaxed text-muted">
         <ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-brand" aria-hidden />
-        Our team will call you to understand the requirement before suggesting a helper or
-        caregiver. Your details are kept private.
+        {compact
+          ? "Quick first step — our team will call to understand your needs. Your details stay private."
+          : "Our team will call you to understand the requirement before suggesting a helper or caregiver. Your details are kept private."}
       </p>
     </form>
   );
