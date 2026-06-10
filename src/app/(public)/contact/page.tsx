@@ -37,7 +37,7 @@ export default function ContactPage() {
         breadcrumbs={[{ name: "Contact", href: "/contact" }]}
       />
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-5">
           {/* Quick contact + form */}
           <div className="lg:col-span-3">
@@ -61,7 +61,7 @@ export default function ContactPage() {
                 </span>
               </a>
               <a href={`mailto:${BRAND.email}`} className="flex items-center gap-3 rounded-2xl border border-edge bg-white p-4 hover:border-brand">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care text-[#1F5FA0]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-care text-brand-deep">
                   <Mail className="h-5 w-5" aria-hidden />
                 </span>
                 <span>
@@ -70,7 +70,7 @@ export default function ContactPage() {
                 </span>
               </a>
               <div className="flex items-center gap-3 rounded-2xl border border-edge bg-white p-4">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream text-[#8A6D2F]">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cream text-cta-ink">
                   <MapPin className="h-5 w-5" aria-hidden />
                 </span>
                 <span>

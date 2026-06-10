@@ -58,7 +58,7 @@ export default async function HomeHelpServicesPage() {
         breadcrumbs={[{ name: "Home Help", href: "/home-help-services" }]}
       />
       <TrustBar />
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page space-y-8">
           <AnswerBlock>
             EzyHelpers provides verified home helpers in Bangalore for daily household needs —

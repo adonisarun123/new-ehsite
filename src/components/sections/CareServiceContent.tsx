@@ -41,15 +41,16 @@ export function CareServiceContent({
 
   return (
     <>
-      <section className="bg-gradient-to-b from-care/60 to-white">
-        <div className="container-page py-10 sm:py-14">
+      <section className="relative overflow-hidden bg-ivory">
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-care/70 blur-3xl" aria-hidden />
+        <div className="container-page relative py-10 sm:py-14">
           <Breadcrumbs items={breadcrumbs} />
           <div className="mt-6 grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-3">
               <Badge tone="care">
                 <Icon name={service.icon} className="h-3.5 w-3.5" /> {service.supportLevel}
               </Badge>
-              <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-ink sm:text-4xl">
+              <h1 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.6rem]">
                 {title}
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-muted">{service.heroSubtitle}</p>
@@ -83,7 +84,7 @@ export function CareServiceContent({
       </section>
 
       {/* Who this is for + family concerns */}
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <ListBlock title="Who this care is for" items={service.whoItIsFor} />
           {service.familyConcerns.length > 0 && (
@@ -96,7 +97,7 @@ export function CareServiceContent({
       </section>
 
       {/* Can / cannot do + scope note */}
-      <section className="section bg-brand-mint/40">
+      <section className="section bg-ivory">
         <div className="container-page">
           <SectionHeading
             title="What the caregiver can and cannot do"
@@ -120,7 +121,7 @@ export function CareServiceContent({
       </section>
 
       {/* Care options + recommended profile */}
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <ListBlock title="Types of care options" items={service.careOptions} />
           <ListBlock
@@ -133,7 +134,7 @@ export function CareServiceContent({
       <ProcessSteps steps={service.processSteps} title="How EzyHelpers matches caregivers" />
 
       {/* Safety + family checklist */}
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <ListBlock title="Safety and verification" items={service.safetyPoints} />
           <ListBlock title="A quick family checklist" items={service.familyChecklist} />

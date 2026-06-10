@@ -27,7 +27,7 @@ export function HiringContent({ job, headingOverride, introOverride, applicantTy
         breadcrumbs={breadcrumbs ?? [{ name: job.title, href: `/${job.slug}` }]}
       />
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-5">
           <div className="space-y-8 lg:col-span-3">
             <AnswerBlock>{job.answerBlock}</AnswerBlock>
@@ -60,7 +60,7 @@ export function HiringContent({ job, headingOverride, introOverride, applicantTy
 
       <ProcessSteps steps={job.applicationProcess} title="How to apply" />
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page max-w-2xl">
           <ListBlock title="Safety and support" items={job.safetyAndSupport} />
         </div>

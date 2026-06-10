@@ -36,15 +36,16 @@ export function ServiceContent({
 
   return (
     <>
-      <section className="bg-gradient-to-b from-brand-mint/70 to-white">
-        <div className="container-page py-10 sm:py-14">
+      <section className="relative overflow-hidden bg-ivory">
+        <div className="pointer-events-none absolute -right-32 -top-32 h-80 w-80 rounded-full bg-cta/10 blur-3xl" aria-hidden />
+        <div className="container-page relative py-10 sm:py-14">
           <Breadcrumbs items={breadcrumbs} />
           <div className="mt-6 grid gap-10 lg:grid-cols-5">
             <div className="lg:col-span-3">
               <Badge tone="brand">
                 <Icon name={service.icon} className="h-3.5 w-3.5" /> Verified home help
               </Badge>
-              <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-ink sm:text-4xl">
+              <h1 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.6rem]">
                 {title}
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-muted">{service.heroSubtitle}</p>
@@ -73,7 +74,7 @@ export function ServiceContent({
       </section>
 
       {service.serviceOptions.length > 0 && (
-        <section className="section">
+        <section className="section bg-white">
           <div className="container-page">
             <SectionHeading title="Service options" />
             <div className="mt-6 flex flex-wrap gap-3">
@@ -90,14 +91,14 @@ export function ServiceContent({
         </section>
       )}
 
-      <section className="section bg-brand-mint/40">
+      <section className="section bg-ivory">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <ListBlock title="Who this is for" items={service.whoItIsFor} />
           <ListBlock title="Tasks included" items={service.whatIsIncluded} />
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <ListBlock title="What is not included" items={service.whatIsNotIncluded} variant="cross" />
           <ListBlock title="Verification and support" items={service.trustPoints} />

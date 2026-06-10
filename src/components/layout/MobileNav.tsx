@@ -28,7 +28,7 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
           <a
             href={telHref()}
             onClick={() => track("call_click", { location: "mobile-nav" })}
-            className="flex items-center justify-center gap-2 rounded-xl border border-edge py-3 text-sm font-semibold text-ink"
+            className="flex items-center justify-center gap-2 rounded-full border border-edge py-3 text-sm font-semibold text-ink"
           >
             <Phone className="h-4 w-4 text-brand" /> Call
           </a>
@@ -37,21 +37,21 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             target="_blank"
             rel="noopener"
             onClick={() => track("whatsapp_click", { location: "mobile-nav" })}
-            className="flex items-center justify-center gap-2 rounded-xl bg-[#25D366] py-3 text-sm font-semibold text-white"
+            className="flex items-center justify-center gap-2 rounded-full bg-[#25D366] py-3 text-sm font-semibold text-white"
           >
             <MessageCircle className="h-4 w-4" /> WhatsApp
           </a>
           <Link
             href="/contact"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 rounded-xl bg-cta py-3 text-sm font-semibold text-ink"
+            className="flex items-center justify-center gap-2 rounded-full bg-cta py-3 text-sm font-semibold text-ink"
           >
             <FileText className="h-4 w-4" /> Get Help
           </Link>
           <Link
             href="/helper-jobs"
             onClick={onClose}
-            className="flex items-center justify-center gap-2 rounded-xl border border-edge py-3 text-sm font-semibold text-ink"
+            className="flex items-center justify-center gap-2 rounded-full border border-edge py-3 text-sm font-semibold text-ink"
           >
             <Briefcase className="h-4 w-4 text-brand" /> Apply for Job
           </Link>

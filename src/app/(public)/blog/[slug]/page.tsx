@@ -69,7 +69,7 @@ export default async function BlogPostPage({ params }: Params) {
       />
 
       <article>
-        <header className="bg-gradient-to-b from-brand-mint/60 to-white">
+        <header className="bg-ivory">
           <div className="container-page py-10 sm:py-14">
             <Breadcrumbs
               items={[
@@ -79,7 +79,7 @@ export default async function BlogPostPage({ params }: Params) {
             />
             <div className="mt-5 max-w-3xl">
               <Badge tone="brand">{categoryName(post.category)}</Badge>
-              <h1 className="mt-3 font-heading text-3xl font-bold leading-tight text-ink sm:text-4xl">
+              <h1 className="mt-3 font-heading text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-[2.6rem]">
                 {post.title}
               </h1>
               <div className="mt-3 flex items-center gap-2 text-sm text-muted">
@@ -89,12 +89,12 @@ export default async function BlogPostPage({ params }: Params) {
           </div>
         </header>
 
-        <div className="container-page py-10">
+        <div className="bg-white py-10"><div className="container-page">
           <div className="mx-auto max-w-3xl space-y-8">
             <AnswerBlock>{post.answerSummary}</AnswerBlock>
 
             {/* Table of contents */}
-            <nav aria-label="Table of contents" className="rounded-2xl border border-edge bg-white p-5">
+            <nav aria-label="Table of contents" className="rounded-2xl border border-edge bg-ivory p-5">
               <p className="mb-2 text-sm font-semibold text-ink">On this page</p>
               <ol className="space-y-1.5 text-sm">
                 {post.sections.map((s) => (
@@ -121,7 +121,7 @@ export default async function BlogPostPage({ params }: Params) {
 
             {/* Checklist */}
             {post.checklist.length > 0 && (
-              <div className="rounded-2xl border border-edge bg-brand-mint/40 p-6">
+              <div className="rounded-2xl border border-edge bg-ivory p-6">
                 <h2 className="font-heading text-lg font-semibold text-ink">Practical checklist</h2>
                 <ul className="mt-4 space-y-2.5">
                   {post.checklist.map((c) => (
@@ -156,13 +156,13 @@ export default async function BlogPostPage({ params }: Params) {
               </div>
             </div>
           </div>
-        </div>
+        </div></div>
 
         {post.faqs.length > 0 && (
           <FAQSection faqs={post.faqs} trackContext={`blog-${post.slug}`} />
         )}
 
-        <section className="section bg-brand-mint/30">
+        <section className="section bg-white">
           <div className="container-page">
             <SectionHeading title="Related articles" />
             <div className="mt-8">

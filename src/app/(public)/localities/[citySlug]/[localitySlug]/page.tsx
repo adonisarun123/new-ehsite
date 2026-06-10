@@ -58,7 +58,7 @@ export default async function LocalityPage({ params }: Params) {
         ]}
       />
 
-      <section className="pb-14 pt-8 sm:pb-20">
+      <section className="bg-white pb-14 pt-8 sm:pb-20">
         <div className="container-page space-y-10">
           <AnswerBlock>
             EzyHelpers provides verified caregivers and home helpers in {locality.name}, {city.name}
@@ -98,15 +98,15 @@ export default async function LocalityPage({ params }: Params) {
         </div>
       </section>
 
-      <section className="section bg-brand-mint/40">
+      <section className="section bg-ivory">
         <div className="container-page">
-          <SectionHeading title="Nearby localities we serve" />
+          <SectionHeading eyebrow="Nearby" title="Nearby localities we serve" />
           <div className="mt-8 flex flex-wrap gap-2">
             {nearby.map((l) => (
               <Link
                 key={l.slug}
                 href={`/localities/${city.slug}/${l.slug}/elderly-care`}
-                className="rounded-full border border-edge bg-white px-4 py-2 text-sm text-ink hover:border-brand hover:text-brand-deep"
+                className="rounded-full border border-edge bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-brand/50 hover:bg-brand-mint/60 hover:text-brand-deep"
               >
                 {l.name}
               </Link>

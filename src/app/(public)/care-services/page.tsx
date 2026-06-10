@@ -68,7 +68,7 @@ export default async function CareServicesPage() {
       />
 
       {/* Answer + scope sit close to the hero (reduced top padding) */}
-      <section className="pb-14 pt-8 sm:pb-20">
+      <section className="bg-white pb-14 pt-8 sm:pb-20">
         <div className="container-page grid gap-6 lg:grid-cols-2">
           <AnswerBlock>
             EzyHelpers provides trained caregiver and attendant support at home in Bangalore for
@@ -86,7 +86,7 @@ export default async function CareServicesPage() {
         </div>
       </section>
 
-      <section className="section bg-brand-mint/40">
+      <section className="section bg-ivory">
         <div className="container-page grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div>
             <SectionHeading

@@ -69,7 +69,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section bg-brand-mint/40">
+      <section className="section bg-ivory">
         <div className="container-page">
           <SectionHeading center eyebrow="What we solve" title="The problems we help families with" />
           <div className="mt-10 grid gap-6 sm:grid-cols-3">
@@ -90,7 +90,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page grid gap-10 lg:grid-cols-2">
           <ListBlock
             title="How we support families"

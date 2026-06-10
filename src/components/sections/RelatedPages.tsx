@@ -17,7 +17,7 @@ interface Props {
 export function RelatedPages({ title = "Related pages", links }: Props) {
   if (!links.length) return null;
   return (
-    <section className="section" aria-labelledby="related-heading">
+    <section className="section bg-white" aria-labelledby="related-heading">
       <div className="container-page">
         <SectionHeading title={title} />
         <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

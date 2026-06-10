@@ -79,7 +79,7 @@ function Column({ title, links }: { title: string; links: { label: string; href:
 
 export function Footer() {
   return (
-    <footer className="bg-brand-deep text-white">
+    <footer className="bg-night text-white">
       <div className="container-page py-14">
         <div className="grid gap-10 lg:grid-cols-12">
           {/* Brand summary */}

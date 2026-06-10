@@ -35,7 +35,7 @@ export default async function BlogPage({ searchParams }: Props) {
         breadcrumbs={[{ name: "Blog", href: "/blog" }]}
       />
 
-      <section className="section">
+      <section className="section bg-white">
         <div className="container-page">
           {/* Categories */}
           <div className="mb-8 flex flex-wrap gap-2">
@@ -63,10 +63,10 @@ export default async function BlogPage({ searchParams }: Props) {
           {featured && !category && (
             <Link
               href={`/blog/${featured.slug}`}
-              className="mb-10 block overflow-hidden rounded-3xl border border-edge bg-brand-mint/40 p-8 transition-shadow hover:shadow-lift"
+              className="mb-10 block overflow-hidden rounded-3xl border border-edge bg-ivory p-8 transition-shadow hover:shadow-lift"
             >
               <span className="eyebrow">Featured guide</span>
-              <h2 className="mt-2 font-heading text-2xl font-bold text-ink">{featured.title}</h2>
+              <h2 className="mt-2 font-heading text-2xl font-semibold tracking-tight text-ink">{featured.title}</h2>
               <p className="mt-3 max-w-2xl text-muted">{featured.excerpt}</p>
               <span className="mt-4 inline-block font-semibold text-brand">Read the guide →</span>
             </Link>
