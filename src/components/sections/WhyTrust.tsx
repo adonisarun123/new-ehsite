@@ -53,12 +53,20 @@ export function WhyTrust() {
           description="We don't just connect you with helpers — we make sure they're verified, trained, and committed to your family's safety."
         />
         <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f) => (
+          {FEATURES.map((f, i) => (
             <li
               key={f.title}
-              className="rounded-2xl border border-edge bg-white p-6 shadow-card transition-shadow hover:shadow-lift"
+              className="rounded-2xl border border-edge bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift motion-reduce:transform-none"
             >
-              <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-mint text-brand-deep">
+              <span
+                className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${
+                  [
+                    "bg-brand-mint text-brand-deep",
+                    "bg-accent/10 text-accent-deep",
+                    "bg-cta/15 text-cta-ink",
+                  ][i % 3]
+                }`}
+              >
                 <f.icon className="h-6 w-6" aria-hidden />
               </span>
               <h3 className="font-heading text-lg font-semibold text-ink">{f.title}</h3>

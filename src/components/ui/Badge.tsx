@@ -4,10 +4,10 @@ type Tone = "brand" | "care" | "cream" | "neutral" | "cta" | "accent";
 
 const tones: Record<Tone, string> = {
   brand: "bg-brand-mint text-brand-deep",
-  care: "bg-care text-[#1F5FA0]",
+  care: "bg-care text-brand-deep",
   cream: "bg-cream text-[#8A6D2F]",
   neutral: "bg-edge/40 text-muted",
-  cta: "bg-cta/15 text-[#8A5A06]",
+  cta: "bg-cta/15 text-cta-ink",
   accent: "bg-accent/10 text-accent",
 };
 

@@ -11,7 +11,7 @@ export function Accreditations() {
     <section className="section bg-white" aria-labelledby="accreditations-heading">
       <div className="container-page">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="flex items-center justify-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand">
+          <p className="eyebrow eyebrow-green">
             <ShieldCheck className="h-4 w-4" aria-hidden /> Recognised &amp; Affiliated
           </p>
           <h2
@@ -31,7 +31,7 @@ export function Accreditations() {
           {ACCREDITATIONS.map((a) => (
             <li
               key={a.alt}
-              className="flex flex-col items-center rounded-2xl border border-edge bg-white p-5 text-center shadow-card"
+              className="flex flex-col items-center rounded-2xl border border-edge bg-white p-5 text-center shadow-card transition-all hover:-translate-y-1 hover:border-accent/40 hover:shadow-lift motion-reduce:transform-none"
             >
               <div className="flex h-20 items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}

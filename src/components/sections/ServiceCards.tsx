@@ -18,9 +18,9 @@ export function ServiceCards({ services }: Props) {
           <Link
             href={`/services/${s.slug}`}
             onClick={() => track("service_card_click", { service: s.slug, kind: "home" })}
-            className="group flex h-full flex-col rounded-2xl border border-edge bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lift"
+            className="group flex h-full flex-col rounded-2xl border border-edge bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:border-cta/50 hover:shadow-lift motion-reduce:transform-none"
           >
-            <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-mint text-brand-deep">
+            <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-cta-soft text-cta-ink">
               <Icon name={s.icon} className="h-6 w-6" />
             </span>
             <h3 className="font-heading text-lg font-semibold text-ink">{s.name}</h3>

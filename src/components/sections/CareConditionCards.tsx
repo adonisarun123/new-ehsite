@@ -21,7 +21,7 @@ export function CareConditionCards({ services }: Props) {
             onClick={() => track("service_card_click", { service: s.slug, kind: "care" })}
             className="group flex h-full flex-col rounded-2xl border border-edge bg-white p-6 shadow-card transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:shadow-lift"
           >
-            <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-care text-[#1F5FA0]">
+            <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-care text-brand-deep">
               <Icon name={s.icon} className="h-6 w-6" />
             </span>
             <h3 className="font-heading text-lg font-semibold text-ink">{s.name}</h3>

@@ -57,11 +57,12 @@ export default async function HomePage() {
       </section>
 
       {/* Domestic helper block (spec §12.1 §6) */}
-      <section className="section bg-brand-mint/40" aria-labelledby="homehelp-heading">
+      <section className="section bg-gradient-to-b from-cta-soft/60 to-white" aria-labelledby="homehelp-heading">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
               eyebrow="Home help"
+              eyebrowTone="warm"
               title="Verified helpers for everyday household needs"
               description="Live-in and full-time maids, cooks, nannies, and housekeeping help — screened, trained, and matched to your home."
             />
@@ -96,7 +97,7 @@ export default async function HomePage() {
               <Link
                 key={l.slug}
                 href={`/localities/bangalore/${l.slug}/elderly-care`}
-                className="rounded-full border border-edge bg-white px-4 py-2 text-sm text-ink hover:border-brand hover:text-brand-deep"
+                className="rounded-full border border-edge bg-white px-4 py-2 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-white hover:shadow-card motion-reduce:transform-none"
               >
                 {l.name}
               </Link>
@@ -108,10 +109,11 @@ export default async function HomePage() {
       {/* Helper dignity / employment */}
       <section className="section" aria-labelledby="dignity-heading">
         <div className="container-page">
-          <div className="grid items-center gap-8 rounded-3xl border border-edge bg-cream/60 p-8 lg:grid-cols-2 lg:p-12">
+          <div className="grid items-center gap-8 rounded-3xl border border-cta/20 bg-gradient-to-br from-cream to-cta-soft/70 p-8 lg:grid-cols-2 lg:p-12">
             <div>
               <SectionHeading
                 eyebrow="For helpers & caregivers"
+                eyebrowTone="green"
                 title="Safe, dignified work — without agent cuts"
                 description="EzyHelpers helps trained helpers and caregivers — including GDA, ANM, and GNM candidates — find respectful jobs with supportive coordination."
               />

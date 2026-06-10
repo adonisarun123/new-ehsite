@@ -54,6 +54,19 @@
   }
 
   .eyebrow {
-    @apply text-sm font-semibold uppercase tracking-wide text-brand;
+    @apply inline-flex items-center gap-1.5 rounded-full bg-brand/10 px-3.5 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-deep;
+  }
+
+  .eyebrow-warm {
+    @apply bg-cta/15 text-cta-deep;
+  }
+
+  .eyebrow-green {
+    @apply bg-accent/10 text-accent-deep;
+  }
+
+  /* Gradient highlight for a key word in headlines */
+  .text-gradient-brand {
+    @apply bg-gradient-to-r from-brand via-brand-bright to-accent bg-clip-text text-transparent;
   }
 }

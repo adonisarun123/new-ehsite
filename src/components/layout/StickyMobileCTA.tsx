@@ -30,7 +30,7 @@ export function StickyMobileCTA() {
         </a>
         <Link
           href="/contact"
-          className="flex flex-col items-center gap-0.5 bg-cta/10 py-2.5 text-xs font-semibold text-[#8A5A06]"
+          className="flex flex-col items-center gap-0.5 bg-cta/10 py-2.5 text-xs font-semibold text-cta-ink"
         >
           <FileText className="h-5 w-5 text-cta" aria-hidden />
           Enquire

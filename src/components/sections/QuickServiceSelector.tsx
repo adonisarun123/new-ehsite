@@ -4,13 +4,18 @@ import Link from "next/link";
 import { track } from "@/lib/utils/analytics";
 
 const OPTIONS = [
-  { label: "Elderly Care", href: "/care-services/elderly-care" },
-  { label: "Dementia Care", href: "/care-services/dementia-care" },
-  { label: "Patient Care", href: "/care-services/patient-care" },
-  { label: "Live-in Maid", href: "/services/live-in-maids" },
-  { label: "Nanny", href: "/services/nanny-babysitter" },
-  { label: "Cook", href: "/services/cooks" },
-];
+  { label: "Elderly Care", href: "/care-services/elderly-care", tone: "care" },
+  { label: "Dementia Care", href: "/care-services/dementia-care", tone: "care" },
+  { label: "Patient Care", href: "/care-services/patient-care", tone: "care" },
+  { label: "Live-in Maid", href: "/services/live-in-maids", tone: "home" },
+  { label: "Nanny", href: "/services/nanny-babysitter", tone: "home" },
+  { label: "Cook", href: "/services/cooks", tone: "home" },
+] as const;
+
+const TONE_CLASSES: Record<(typeof OPTIONS)[number]["tone"], string> = {
+  care: "border-brand/20 bg-brand-mint/70 text-brand-deep hover:border-brand hover:bg-brand-mint",
+  home: "border-cta/25 bg-cta-soft/70 text-cta-ink hover:border-cta hover:bg-cta-soft",
+};
 
 /** "I need help with:" quick links (spec §12.1). */
 export function QuickServiceSelector() {
@@ -26,7 +31,7 @@ export function QuickServiceSelector() {
               key={o.href}
               href={o.href}
               onClick={() => track("service_card_click", { service: o.label, location: "quick-selector" })}
-              className="rounded-full border border-edge bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:border-brand hover:bg-brand-mint hover:text-brand-deep"
+              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-card motion-reduce:transform-none ${TONE_CLASSES[o.tone]}`}
             >
               {o.label}
             </Link>

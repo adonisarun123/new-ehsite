@@ -5,7 +5,7 @@ import { TESTIMONIALS } from "@/content/seed-testimonials";
 /** Customer testimonials (real reviews from www.ezyhelpers.com). */
 export function Testimonials() {
   return (
-    <section className="section bg-brand-mint/40" aria-labelledby="testimonials-heading">
+    <section className="section bg-gradient-to-b from-cta-soft/50 via-white to-brand-mint/50" aria-labelledby="testimonials-heading">
       <div className="container-page">
         <SectionHeading
           center
@@ -30,7 +30,7 @@ export function Testimonials() {
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="mt-5 flex items-center gap-3 border-t border-edge pt-4">
-                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-brand text-sm font-semibold text-white">
+                <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-accent text-sm font-semibold text-white">
                   {t.initials}
                 </span>
                 <span>

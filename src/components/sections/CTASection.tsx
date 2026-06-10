@@ -18,12 +18,14 @@ export function CTASection({
   return (
     <section className="section">
       <div className="container-page">
-        <div className="overflow-hidden rounded-3xl bg-brand-deep px-6 py-12 text-center text-white sm:px-12">
-          <h2 className="mx-auto max-w-2xl font-heading text-2xl font-bold text-white sm:text-3xl">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-deep via-brand to-accent-deep px-6 py-12 text-center text-white sm:px-12">
+          <div className="pointer-events-none absolute -left-16 -top-20 h-64 w-64 rounded-full bg-brand-bright/25 blur-3xl" aria-hidden />
+          <div className="pointer-events-none absolute -bottom-20 -right-12 h-64 w-64 rounded-full bg-cta/25 blur-3xl" aria-hidden />
+          <h2 className="relative mx-auto max-w-2xl font-heading text-2xl font-bold text-white sm:text-3xl">
             {title}
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-white/80">{description}</p>
-          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <p className="relative mx-auto mt-3 max-w-xl text-white/80">{description}</p>
+          <div className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button href={primaryHref} variant="cta" size="lg">
               {primaryLabel}
             </Button>

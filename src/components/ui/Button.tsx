@@ -10,8 +10,8 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-brand text-white shadow-soft hover:bg-brand-deep focus-visible:ring-brand",
-  cta: "bg-cta text-ink shadow-soft hover:brightness-95 focus-visible:ring-cta",
+    "bg-brand text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-deep hover:shadow-glow-brand focus-visible:ring-brand motion-reduce:transform-none",
+  cta: "bg-gradient-to-b from-cta to-cta-deep text-ink shadow-glow hover:-translate-y-0.5 hover:brightness-105 focus-visible:ring-cta motion-reduce:transform-none",
   outline:
     "border border-edge bg-white text-ink hover:border-brand hover:text-brand focus-visible:ring-brand",
   ghost: "text-brand hover:bg-brand-mint focus-visible:ring-brand",
