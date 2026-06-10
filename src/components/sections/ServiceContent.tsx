@@ -10,6 +10,7 @@ import { RelatedPages, type RelatedLink } from "./RelatedPages";
 import { Badge } from "@/components/ui/Badge";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { Icon } from "@/components/Icon";
+import { MapPin, CalendarClock, ShieldCheck, RefreshCw, IndianRupee } from "lucide-react";
 
 interface Props {
   service: Service;
@@ -54,7 +55,7 @@ export function ServiceContent({
               </div>
             </div>
             <div className="lg:col-span-2">
-              <div className="rounded-3xl border border-edge bg-white p-6 shadow-lift">
+              <div className="rounded-3xl border border-edge bg-white p-6 shadow-lift lg:sticky lg:top-24">
                 <h2 className="font-heading text-lg font-semibold text-ink">
                   Request this service
                 </h2>
@@ -70,6 +71,29 @@ export function ServiceContent({
               </div>
             </div>
           </div>
+
+          {/* Local context fact strip */}
+          <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: MapPin, title: `Serving ${where}`, sub: "and nearby areas" },
+              { icon: CalendarClock, title: "Flexible arrangements", sub: "live-in, full-time, or part-time" },
+              { icon: ShieldCheck, title: "Verified & trained", sub: "screened before placement" },
+              { icon: RefreshCw, title: "Replacement support", sub: "if the fit isn't right" },
+            ].map((f) => (
+              <div
+                key={f.title}
+                className="flex items-start gap-3 rounded-2xl border border-edge/70 bg-white p-4 shadow-card"
+              >
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-cta-soft text-cta-ink">
+                  <f.icon className="h-4 w-4" aria-hidden />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-ink">{f.title}</span>
+                  <span className="mt-0.5 block text-xs text-muted">{f.sub}</span>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -81,7 +105,7 @@ export function ServiceContent({
               {service.serviceOptions.map((opt) => (
                 <span
                   key={opt}
-                  className="rounded-full border border-edge bg-white px-4 py-2 text-sm font-medium text-ink"
+                  className="rounded-full border border-cta/25 bg-cta-soft/60 px-4 py-2 text-sm font-medium text-cta-ink"
                 >
                   {opt}
                 </span>
@@ -92,14 +116,14 @@ export function ServiceContent({
       )}
 
       <section className="section bg-ivory">
-        <div className="container-page grid gap-10 lg:grid-cols-2">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <ListBlock title="Who this is for" items={service.whoItIsFor} />
           <ListBlock title="Tasks included" items={service.whatIsIncluded} />
         </div>
       </section>
 
       <section className="section bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-2">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <ListBlock title="What is not included" items={service.whatIsNotIncluded} variant="cross" />
           <ListBlock title="Verification and support" items={service.trustPoints} />
         </div>
@@ -109,9 +133,14 @@ export function ServiceContent({
 
       <section className="pb-4">
         <div className="container-page">
-          <div className="rounded-2xl border border-edge bg-cream/60 p-6">
-            <h3 className="font-heading text-lg font-semibold text-ink">Pricing & consultation</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink/85">{service.pricingNote}</p>
+          <div className="flex gap-4 rounded-2xl border border-cta/25 bg-cream/70 p-6">
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-cta/15 text-cta-ink">
+              <IndianRupee className="h-5 w-5" aria-hidden />
+            </span>
+            <div>
+              <h3 className="font-heading text-lg font-semibold text-ink">Pricing & consultation</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/85">{service.pricingNote}</p>
+            </div>
           </div>
         </div>
       </section>

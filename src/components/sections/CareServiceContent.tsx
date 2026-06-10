@@ -11,6 +11,7 @@ import { RelatedPages, type RelatedLink } from "./RelatedPages";
 import { Badge } from "@/components/ui/Badge";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { Icon } from "@/components/Icon";
+import { MapPin, CalendarClock, ShieldCheck, RefreshCw, IndianRupee } from "lucide-react";
 
 interface Props {
   service: CareService;
@@ -59,9 +60,9 @@ export function CareServiceContent({
               </div>
             </div>
 
-            {/* Lead form card */}
+            {/* Lead form card — sticky so the CTA stays in view on long pages */}
             <div className="lg:col-span-2">
-              <div className="rounded-3xl border border-edge bg-white p-6 shadow-lift">
+              <div className="rounded-3xl border border-edge bg-white p-6 shadow-lift lg:sticky lg:top-24">
                 <h2 className="font-heading text-lg font-semibold text-ink">
                   Request a free care consultation
                 </h2>
@@ -80,12 +81,35 @@ export function CareServiceContent({
               </div>
             </div>
           </div>
+
+          {/* Local context fact strip */}
+          <div className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { icon: MapPin, title: `Serving ${where}`, sub: "and nearby areas" },
+              { icon: CalendarClock, title: "Day, night & live-in", sub: "options to suit your routine" },
+              { icon: ShieldCheck, title: "Verified & trained", sub: "screened before placement" },
+              { icon: RefreshCw, title: "Replacement support", sub: "if the fit isn't right" },
+            ].map((f) => (
+              <div
+                key={f.title}
+                className="flex items-start gap-3 rounded-2xl border border-edge/70 bg-white p-4 shadow-card"
+              >
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-care text-brand-deep">
+                  <f.icon className="h-4 w-4" aria-hidden />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-ink">{f.title}</span>
+                  <span className="mt-0.5 block text-xs text-muted">{f.sub}</span>
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Who this is for + family concerns */}
       <section className="section bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-2">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <ListBlock title="Who this care is for" items={service.whoItIsFor} />
           {service.familyConcerns.length > 0 && (
             <ListBlock
@@ -103,7 +127,7 @@ export function CareServiceContent({
             title="What the caregiver can and cannot do"
             description="We are clear about scope so families know exactly what to expect."
           />
-          <div className="mt-8 grid gap-10 lg:grid-cols-2">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             <ListBlock
               title="What the caregiver can help with"
               items={service.caregiverCanHelpWith}
@@ -122,7 +146,7 @@ export function CareServiceContent({
 
       {/* Care options + recommended profile */}
       <section className="section bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-2">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <ListBlock title="Types of care options" items={service.careOptions} />
           <ListBlock
             title="Recommended caregiver profile"
@@ -135,7 +159,7 @@ export function CareServiceContent({
 
       {/* Safety + family checklist */}
       <section className="section bg-white">
-        <div className="container-page grid gap-10 lg:grid-cols-2">
+        <div className="container-page grid gap-6 lg:grid-cols-2">
           <ListBlock title="Safety and verification" items={service.safetyPoints} />
           <ListBlock title="A quick family checklist" items={service.familyChecklist} />
         </div>
@@ -144,9 +168,14 @@ export function CareServiceContent({
       {/* Pricing note */}
       <section className="pb-4">
         <div className="container-page">
-          <div className="rounded-2xl border border-edge bg-cream/60 p-6">
-            <h3 className="font-heading text-lg font-semibold text-ink">Pricing & consultation</h3>
-            <p className="mt-2 text-sm leading-relaxed text-ink/85">{service.pricingNote}</p>
+          <div className="flex gap-4 rounded-2xl border border-cta/25 bg-cream/70 p-6">
+            <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-cta/15 text-cta-ink">
+              <IndianRupee className="h-5 w-5" aria-hidden />
+            </span>
+            <div>
+              <h3 className="font-heading text-lg font-semibold text-ink">Pricing & consultation</h3>
+              <p className="mt-2 text-sm leading-relaxed text-ink/85">{service.pricingNote}</p>
+            </div>
           </div>
         </div>
       </section>
