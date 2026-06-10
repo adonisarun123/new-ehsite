@@ -1,4 +1,7 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { buildMetadata } from "@/features/seo/metadata";
+import { BRAND } from "@/lib/constants/brand";
 import { Hero } from "@/components/sections/Hero";
 import { QuickServiceSelector } from "@/components/sections/QuickServiceSelector";
 import { TrustBar } from "@/components/sections/TrustBar";
@@ -17,6 +20,12 @@ import { getAllCareServices, getAllServices } from "@/features/services/queries"
 import { GENERAL_FAQS } from "@/content/seed-faqs";
 import { BANGALORE_LOCALITIES } from "@/lib/constants/locations";
 import { ShieldCheck, MapPin } from "lucide-react";
+
+export const metadata: Metadata = buildMetadata({
+  title: `${BRAND.name} — Trusted Caregivers & Home Helpers in Bangalore`,
+  description: BRAND.description,
+  path: "/",
+});
 
 const HELP_PROCESS = [
   { title: "Tell us your need", description: "Share the service, timing, and location through a quick enquiry, call, or WhatsApp." },

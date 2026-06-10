@@ -41,7 +41,7 @@ export default async function BlogPage({ searchParams }: Props) {
           <div className="mb-8 flex flex-wrap gap-2">
             <Link
               href="/blog"
-              className={`rounded-full border px-4 py-2 text-sm font-medium ${
+              className={`inline-flex min-h-[44px] items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                 !category ? "border-brand bg-brand-mint text-brand-deep" : "border-edge bg-white text-ink hover:border-brand"
               }`}
             >
@@ -51,7 +51,7 @@ export default async function BlogPage({ searchParams }: Props) {
               <Link
                 key={c.slug}
                 href={`/blog?category=${c.slug}`}
-                className={`rounded-full border px-4 py-2 text-sm font-medium ${
+                className={`inline-flex min-h-[44px] items-center rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                   category === c.slug ? "border-brand bg-brand-mint text-brand-deep" : "border-edge bg-white text-ink hover:border-brand"
                 }`}
               >

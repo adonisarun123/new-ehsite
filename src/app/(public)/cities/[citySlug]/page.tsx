@@ -80,7 +80,7 @@ export default async function CityPage({ params }: Params) {
                 <Link
                   key={l.slug}
                   href={`/localities/${city.slug}/${l.slug}/elderly-care`}
-                  className="rounded-full border border-edge bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-brand/50 hover:bg-brand-mint/60 hover:text-brand-deep"
+                  className="inline-flex min-h-[44px] items-center rounded-full border border-edge bg-white px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-brand/50 hover:bg-brand-mint/60 hover:text-brand-deep"
                 >
                   {l.name}
                 </Link>

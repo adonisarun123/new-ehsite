@@ -31,7 +31,7 @@ export function QuickServiceSelector() {
               key={o.href}
               href={o.href}
               onClick={() => track("service_card_click", { service: o.label, location: "quick-selector" })}
-              className={`rounded-full border px-5 py-2.5 text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-card motion-reduce:transform-none ${TONE_CLASSES[o.tone]}`}
+              className={`inline-flex min-h-[44px] items-center rounded-full border px-5 py-2.5 text-sm font-semibold transition-all hover:-translate-y-0.5 hover:shadow-card motion-reduce:transform-none ${TONE_CLASSES[o.tone]}`}
             >
               {o.label}
             </Link>

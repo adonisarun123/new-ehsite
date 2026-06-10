@@ -89,6 +89,7 @@ export function blogPostingSchema(opts: {
   description: string;
   url: string;
   datePublished: string;
+  dateModified?: string;
 }) {
   return {
     "@context": "https://schema.org",
@@ -96,8 +97,16 @@ export function blogPostingSchema(opts: {
     headline: opts.title,
     description: opts.description,
     url: opts.url,
+    mainEntityOfPage: { "@type": "WebPage", "@id": opts.url },
+    image: `${BRAND.url}/og/ezyhelpers-og.png`,
     datePublished: opts.datePublished,
-    author: { "@type": "Organization", name: BRAND.name },
-    publisher: { "@type": "Organization", name: BRAND.name, url: BRAND.url },
+    dateModified: opts.dateModified ?? opts.datePublished,
+    author: { "@type": "Organization", name: BRAND.name, url: BRAND.url },
+    publisher: {
+      "@type": "Organization",
+      name: BRAND.name,
+      url: BRAND.url,
+      logo: { "@type": "ImageObject", url: `${BRAND.url}/logos/ezyhelpers-logo.png` },
+    },
   };
 }
