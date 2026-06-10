@@ -6,7 +6,6 @@ import {
   GraduationCap,
   RefreshCw,
 } from "lucide-react";
-import { SectionHeading } from "./SectionHeading";
 
 /** Trust features mirrored from www.ezyhelpers.com. */
 const FEATURES = [
@@ -42,39 +41,44 @@ const FEATURES = [
   },
 ];
 
+/** Dark trust band with numbered cards (editorial style). */
 export function WhyTrust() {
   return (
-    <section className="section" aria-labelledby="why-trust-heading">
+    <section className="section bg-night text-white" aria-labelledby="why-trust-heading">
       <div className="container-page">
-        <SectionHeading
-          center
-          eyebrow="Why families trust EzyHelpers"
-          title="A safer, more reliable way to find home help"
-          description="We don't just connect you with helpers — we make sure they're verified, trained, and committed to your family's safety."
-        />
-        <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-2xl">
+          <p className="eyebrow !text-white/70">Why families trust EzyHelpers</p>
+          <h2
+            id="why-trust-heading"
+            className="mt-3 font-heading text-3xl font-semibold text-white sm:text-4xl"
+          >
+            The unglamorous work that makes home help safe.
+          </h2>
+          <p className="mt-3 text-white/70">
+            We don&apos;t just connect you with helpers — we make sure they&apos;re verified,
+            trained, and committed to your family&apos;s safety.
+          </p>
+        </div>
+        <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
             <li
               key={f.title}
-              className="rounded-2xl border border-edge bg-white p-6 shadow-card transition-all hover:-translate-y-1 hover:shadow-lift motion-reduce:transform-none"
+              className="rounded-2xl border border-white/10 bg-white/5 p-6 transition-colors hover:border-white/25 hover:bg-white/10"
             >
-              <span
-                className={`mb-4 flex h-12 w-12 items-center justify-center rounded-xl ${
-                  [
-                    "bg-brand-mint text-brand-deep",
-                    "bg-accent/10 text-accent-deep",
-                    "bg-cta/15 text-cta-ink",
-                  ][i % 3]
-                }`}
-              >
-                <f.icon className="h-6 w-6" aria-hidden />
-              </span>
-              <h3 className="font-heading text-lg font-semibold text-ink">{f.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{f.body}</p>
+              <div className="flex items-center gap-3">
+                <span className="font-heading text-2xl font-medium text-white/50" aria-hidden>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white/10 text-white">
+                  <f.icon className="h-[18px] w-[18px]" aria-hidden />
+                </span>
+              </div>
+              <h3 className="mt-4 font-heading text-lg font-semibold text-white">{f.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/70">{f.body}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-center text-xs text-muted">
+        <p className="mt-6 text-xs text-white/50">
           * Police verification is conducted when specifically requested by the customer.
         </p>
       </div>

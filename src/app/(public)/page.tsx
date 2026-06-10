@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/Button";
 import { getAllCareServices, getAllServices } from "@/features/services/queries";
 import { GENERAL_FAQS } from "@/content/seed-faqs";
 import { BANGALORE_LOCALITIES } from "@/lib/constants/locations";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, MapPin } from "lucide-react";
 
 const HELP_PROCESS = [
   { title: "Tell us your need", description: "Share the service, timing, and location through a quick enquiry, call, or WhatsApp." },
@@ -38,7 +38,7 @@ export default async function HomePage() {
       <StatsBar />
 
       {/* Caregiving-first block (spec §12.1 §5) */}
-      <section className="section" aria-labelledby="care-heading">
+      <section className="section bg-white" aria-labelledby="care-heading">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -57,7 +57,7 @@ export default async function HomePage() {
       </section>
 
       {/* Domestic helper block (spec §12.1 §6) */}
-      <section className="section bg-gradient-to-b from-cta-soft/60 to-white" aria-labelledby="homehelp-heading">
+      <section className="section bg-ivory" aria-labelledby="homehelp-heading">
         <div className="container-page">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
@@ -85,21 +85,29 @@ export default async function HomePage() {
       <Accreditations />
 
       {/* City / locality coverage */}
-      <section className="section bg-brand-mint/40" aria-labelledby="coverage-heading">
+      <section className="section bg-white" aria-labelledby="coverage-heading">
         <div className="container-page">
           <SectionHeading
-            eyebrow="Where we serve"
-            title="Caregiving and home help across Bangalore"
+            eyebrow="Across Bangalore"
+            title="Care that reaches your neighbourhood"
             description="We support families across these localities and more. Don't see your area? Just ask."
           />
-          <div className="mt-8 flex flex-wrap gap-2">
+          <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
             {BANGALORE_LOCALITIES.map((l) => (
               <Link
                 key={l.slug}
                 href={`/localities/bangalore/${l.slug}/elderly-care`}
-                className="rounded-full border border-edge bg-white px-4 py-2 text-sm font-medium text-ink transition-all hover:-translate-y-0.5 hover:border-brand hover:bg-brand hover:text-white hover:shadow-card motion-reduce:transform-none"
+                className="group flex items-center gap-3 rounded-2xl border border-edge/70 bg-ivory p-4 transition-all hover:-translate-y-0.5 hover:border-brand/40 hover:bg-white hover:shadow-card motion-reduce:transform-none"
               >
-                {l.name}
+                <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-brand-mint text-brand-deep">
+                  <MapPin className="h-4 w-4" aria-hidden />
+                </span>
+                <span>
+                  <span className="block text-sm font-semibold text-ink group-hover:text-brand-deep">
+                    {l.name}
+                  </span>
+                  <span className="block text-xs text-muted">Caregiving &amp; home help</span>
+                </span>
               </Link>
             ))}
           </div>
@@ -107,9 +115,9 @@ export default async function HomePage() {
       </section>
 
       {/* Helper dignity / employment */}
-      <section className="section" aria-labelledby="dignity-heading">
+      <section className="section bg-ivory" aria-labelledby="dignity-heading">
         <div className="container-page">
-          <div className="grid items-center gap-8 rounded-3xl border border-cta/20 bg-gradient-to-br from-cream to-cta-soft/70 p-8 lg:grid-cols-2 lg:p-12">
+          <div className="grid items-center gap-8 rounded-3xl border border-cta/20 bg-cream/80 p-8 lg:grid-cols-2 lg:p-12">
             <div>
               <SectionHeading
                 eyebrow="For helpers & caregivers"

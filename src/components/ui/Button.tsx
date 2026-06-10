@@ -6,15 +6,15 @@ type Variant = "primary" | "cta" | "outline" | "ghost" | "whatsapp";
 type Size = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-xl font-semibold transition-all focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full font-sans font-semibold transition-all focus-visible:ring-2 focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-brand text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand-deep hover:shadow-glow-brand focus-visible:ring-brand motion-reduce:transform-none",
-  cta: "bg-gradient-to-b from-cta to-cta-deep text-ink shadow-glow hover:-translate-y-0.5 hover:brightness-105 focus-visible:ring-cta motion-reduce:transform-none",
+    "bg-brand-deep text-white shadow-soft hover:-translate-y-0.5 hover:bg-brand hover:shadow-lift focus-visible:ring-brand motion-reduce:transform-none",
+  cta: "bg-cta text-ink shadow-soft hover:-translate-y-0.5 hover:bg-cta-deep hover:shadow-glow focus-visible:ring-cta motion-reduce:transform-none",
   outline:
-    "border border-edge bg-white text-ink hover:border-brand hover:text-brand focus-visible:ring-brand",
-  ghost: "text-brand hover:bg-brand-mint focus-visible:ring-brand",
+    "border border-edge bg-white text-ink hover:border-brand hover:text-brand-deep focus-visible:ring-brand",
+  ghost: "text-brand-deep hover:bg-brand-mint focus-visible:ring-brand",
   whatsapp:
     "bg-[#25D366] text-white shadow-soft hover:brightness-95 focus-visible:ring-[#25D366]",
 };

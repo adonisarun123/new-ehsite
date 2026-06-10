@@ -13,14 +13,14 @@ const OPTIONS = [
 ] as const;
 
 const TONE_CLASSES: Record<(typeof OPTIONS)[number]["tone"], string> = {
-  care: "border-brand/20 bg-brand-mint/70 text-brand-deep hover:border-brand hover:bg-brand-mint",
-  home: "border-cta/25 bg-cta-soft/70 text-cta-ink hover:border-cta hover:bg-cta-soft",
+  care: "border-edge bg-white text-ink hover:border-brand/50 hover:bg-brand-mint/60 hover:text-brand-deep",
+  home: "border-edge bg-white text-ink hover:border-cta/50 hover:bg-cta-soft/60 hover:text-cta-ink",
 };
 
 /** "I need help with:" quick links (spec §12.1). */
 export function QuickServiceSelector() {
   return (
-    <section className="border-b border-edge bg-white" aria-label="Quick service selector">
+    <section className="border-y border-edge/60 bg-white" aria-label="Quick service selector">
       <div className="container-page py-8">
         <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wide text-muted">
           I need help with

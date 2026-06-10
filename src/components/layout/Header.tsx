@@ -16,7 +16,7 @@ export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-edge bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-edge/60 bg-ivory/95 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center" aria-label={`${BRAND.name} home`}>

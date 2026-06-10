@@ -24,6 +24,7 @@ export function SectionHeading({
         <p
           className={cn(
             "eyebrow mb-3",
+            center && "justify-center",
             eyebrowTone === "warm" && "eyebrow-warm",
             eyebrowTone === "green" && "eyebrow-green"
           )}
@@ -31,7 +32,9 @@ export function SectionHeading({
           {eyebrow}
         </p>
       )}
-      <h2 className="font-heading text-2xl font-bold text-ink sm:text-3xl">{title}</h2>
+      <h2 className="font-heading text-[1.7rem] font-semibold leading-snug tracking-tight text-ink sm:text-[2.1rem]">
+        {title}
+      </h2>
       {description && <p className="mt-3 text-muted">{description}</p>}
     </div>
   );

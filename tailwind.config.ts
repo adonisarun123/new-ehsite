@@ -21,6 +21,8 @@ const config: Config = {
           soft: "#E6FFFE", // Mint surface
         },
         cream: "#FFF8EC", // Warm Cream (kept for childcare/warm sections)
+        ivory: "#FAF7F1", // Warm page background (editorial, calm)
+        night: "#1A2421", // Deep ink band (dark trust sections)
         care: "#E6F4FF", // Care Blue (soft)
         ink: "#2B2B2B", // Text Charcoal (live body text)
         muted: "#4B5563", // Muted Text
@@ -36,7 +38,8 @@ const config: Config = {
       },
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        heading: ["var(--font-jakarta)", "var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-fraunces)", "Georgia", "serif"],
+        ui: ["var(--font-jakarta)", "var(--font-inter)", "system-ui", "sans-serif"],
       },
       borderRadius: {
         xl: "1rem",

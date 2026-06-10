@@ -5,7 +5,7 @@ import { TESTIMONIALS } from "@/content/seed-testimonials";
 /** Customer testimonials (real reviews from www.ezyhelpers.com). */
 export function Testimonials() {
   return (
-    <section className="section bg-gradient-to-b from-cta-soft/50 via-white to-brand-mint/50" aria-labelledby="testimonials-heading">
+    <section className="section bg-ivory" aria-labelledby="testimonials-heading">
       <div className="container-page">
         <SectionHeading
           center
@@ -18,9 +18,9 @@ export function Testimonials() {
           {TESTIMONIALS.map((t) => (
             <li
               key={t.name}
-              className="flex flex-col rounded-2xl border border-edge bg-white p-6 shadow-card"
+              className="flex flex-col rounded-2xl border border-cta/20 bg-cream/70 p-6 shadow-card"
             >
-              <Quote className="h-6 w-6 text-brand/40" aria-hidden />
+              <Quote className="h-6 w-6 text-cta-ink/40" aria-hidden />
               <div className="mt-3 flex" aria-label="5 out of 5 stars">
                 {[0, 1, 2, 3, 4].map((i) => (
                   <Star key={i} className="h-4 w-4 fill-cta text-cta" aria-hidden />
@@ -29,7 +29,7 @@ export function Testimonials() {
               <p className="mt-3 flex-1 text-sm leading-relaxed text-ink/85">
                 &ldquo;{t.quote}&rdquo;
               </p>
-              <div className="mt-5 flex items-center gap-3 border-t border-edge pt-4">
+              <div className="mt-5 flex items-center gap-3 border-t border-cta/15 pt-4">
                 <span className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-brand to-accent text-sm font-semibold text-white">
                   {t.initials}
                 </span>
