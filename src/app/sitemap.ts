@@ -11,6 +11,8 @@ import {
   HELPER_JOB_SUBPAGES,
   CAREGIVER_JOB_SUBPAGES,
 } from "@/content/seed-jobs";
+import { CASE_STUDIES } from "@/content/seed-case-studies";
+import { CAREER_ROLES } from "@/content/seed-careers";
 
 const CITY_SERVICE_URL_SLUGS = [
   "elderly-care",
@@ -53,6 +55,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/contact",
     "/faqs",
     "/blog",
+    "/case-studies",
+    "/how-it-works",
+    "/refund-policy",
+    "/careers",
     "/helper-jobs",
     "/caregiver-jobs",
     "/partners/training-institutes",
@@ -64,6 +70,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const careServicePages = CARE_SERVICES.map((s) => url(`/care-services/${s.slug}`));
   const servicePages = SERVICES.map((s) => url(`/services/${s.slug}`));
   const blogPages = BLOG_POSTS.map((p) => url(`/blog/${p.slug}`));
+  const caseStudyPages = CASE_STUDIES.map((c) => url(`/case-studies/${c.slug}`));
+  const careerPages = CAREER_ROLES.map((r) => url(`/careers/${r.slug}`));
 
   const cityPages = CITIES.map((c) => url(`/cities/${c.slug}`));
   const cityServicePages = CITIES.filter((c) => c.slug === "bangalore").flatMap((c) =>
@@ -91,5 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...localityServicePages,
     ...jobSubPages,
     ...blogPages,
+    ...caseStudyPages,
+    ...careerPages,
   ];
 }

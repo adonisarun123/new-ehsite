@@ -84,6 +84,40 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
+/** JobPosting schema for individual career role pages. */
+export function jobPostingSchema(opts: {
+  title: string;
+  description: string;
+  url: string;
+  employmentType: string;
+  city: string;
+  datePosted?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: opts.title,
+    description: opts.description,
+    url: opts.url,
+    employmentType: opts.employmentType,
+    ...(opts.datePosted ? { datePosted: opts.datePosted } : {}),
+    hiringOrganization: {
+      "@type": "Organization",
+      name: BRAND.name,
+      sameAs: BRAND.url,
+      logo: `${BRAND.url}/logos/ezyhelpers-logo.png`,
+    },
+    jobLocation: {
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: opts.city,
+        addressCountry: "IN",
+      },
+    },
+  };
+}
+
 export function blogPostingSchema(opts: {
   title: string;
   description: string;

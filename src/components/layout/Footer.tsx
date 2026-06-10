@@ -47,6 +47,7 @@ const localityLinks = [
 ];
 
 const workLinks = [
+  { label: "Careers", href: "/careers" },
   { label: "Helper Jobs", href: "/helper-jobs" },
   { label: "Caregiver Jobs", href: "/caregiver-jobs" },
   { label: "Training Institute Partners", href: "/partners/training-institutes" },
@@ -54,7 +55,9 @@ const workLinks = [
 ];
 
 const resourceLinks = [
+  { label: "How It Works", href: "/how-it-works" },
   { label: "Blog", href: "/blog" },
+  { label: "Case Studies", href: "/case-studies" },
   { label: "FAQs", href: "/faqs" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
@@ -166,6 +169,7 @@ export function Footer() {
           <nav className="flex gap-5" aria-label="Legal">
             <Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white">Terms</Link>
+            <Link href="/refund-policy" className="hover:text-white">Refund Policy</Link>
           </nav>
         </div>
       </div>

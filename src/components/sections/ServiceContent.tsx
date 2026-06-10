@@ -10,7 +10,9 @@ import { RelatedPages, type RelatedLink } from "./RelatedPages";
 import { Badge } from "@/components/ui/Badge";
 import { LeadForm } from "@/components/forms/LeadForm";
 import { Icon } from "@/components/Icon";
+import Image from "next/image";
 import { MapPin, CalendarClock, ShieldCheck, RefreshCw, IndianRupee } from "lucide-react";
+import { serviceHeroImage } from "@/lib/constants/heroImages";
 
 interface Props {
   service: Service;
@@ -50,6 +52,22 @@ export function ServiceContent({
                 {title}
               </h1>
               <p className="mt-4 max-w-2xl text-lg text-muted">{service.heroSubtitle}</p>
+
+              {/* Illustrative service image */}
+              <div className="relative mt-6 aspect-[16/8] overflow-hidden rounded-3xl border border-edge shadow-card">
+                <Image
+                  src={serviceHeroImage(service.slug).src}
+                  alt={serviceHeroImage(service.slug).alt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="object-cover"
+                  priority
+                />
+                <span className="absolute bottom-3 left-3 inline-flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-ink backdrop-blur">
+                  <MapPin className="h-3.5 w-3.5 text-brand" aria-hidden /> {where}
+                </span>
+              </div>
+
               <div className="mt-6">
                 <AnswerBlock>{service.answerBlock}</AnswerBlock>
               </div>

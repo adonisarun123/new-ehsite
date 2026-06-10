@@ -15,6 +15,11 @@ export interface Service {
   slug: string;
   name: string;
   category: string;
+  /**
+   * Listing tier: "core" home help (maids, cooks, nannies) vs "on-demand"
+   * maintenance/convenience verticals. Undefined is treated as "core".
+   */
+  tier?: "core" | "on-demand";
   shortDescription: string;
   answerBlock: string;
   heroTitle: string;

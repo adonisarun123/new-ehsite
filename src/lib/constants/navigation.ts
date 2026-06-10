@@ -36,15 +36,18 @@ export const MAIN_NAV: NavItem[] = [
     children: [
       { label: "Live-in Maids", href: "/services/live-in-maids" },
       { label: "Full-Time Maids", href: "/services/full-time-maids" },
+      { label: "Part-Time Maids", href: "/services/part-time-maids" },
       { label: "Cooks", href: "/services/cooks" },
       { label: "Nanny / Babysitter", href: "/services/nanny-babysitter" },
+      { label: "Japa Nanny", href: "/services/japa-nanny-services" },
       { label: "Housekeeping", href: "/services/housekeeping" },
     ],
   },
   {
     label: "For Helpers",
-    href: "/helper-jobs",
+    href: "/careers",
     children: [
+      { label: "Careers Overview", href: "/careers" },
       { label: "Helper Jobs", href: "/helper-jobs" },
       { label: "Caregiver Jobs", href: "/caregiver-jobs" },
       { label: "ANM Jobs", href: "/caregiver-jobs/anm" },
@@ -56,7 +59,9 @@ export const MAIN_NAV: NavItem[] = [
     label: "Resources",
     href: "/blog",
     children: [
+      { label: "How It Works", href: "/how-it-works" },
       { label: "Blog", href: "/blog" },
+      { label: "Case Studies", href: "/case-studies" },
       { label: "FAQs", href: "/faqs" },
       { label: "Care Guides", href: "/blog?category=family-guides" },
     ],
