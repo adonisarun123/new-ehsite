@@ -38,13 +38,14 @@ export function Hero() {
             maids, nannies, cooks, and patient attendants for safer, more reliable care at home.
           </p>
 
-          {/* Inline trust checks */}
-          <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2">
+          {/* Solid verification chips (weighty, Snabbit-style trust signals) */}
+          <ul className="mt-6 flex flex-wrap gap-2.5">
             {HERO_TRUST.map((t) => (
-              <li key={t} className="flex items-center gap-2 text-sm font-medium text-ink">
-                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-accent/15 text-accent">
-                  <Check className="h-3.5 w-3.5" aria-hidden />
-                </span>
+              <li
+                key={t}
+                className="inline-flex items-center gap-2 rounded-full bg-brand-deep px-4 py-2 text-sm font-semibold text-white shadow-soft"
+              >
+                <Check className="h-3.5 w-3.5 text-cta" aria-hidden />
                 {t}
               </li>
             ))}
@@ -68,6 +69,8 @@ export function Hero() {
                 ))}
               </span>
               {RATING_BADGE}
+              <span aria-hidden>·</span>
+              Trusted by 10,000+ Indian families
             </span>
           </div>
         </div>

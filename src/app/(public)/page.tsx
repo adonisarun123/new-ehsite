@@ -7,6 +7,7 @@ import { QuickServiceSelector } from "@/components/sections/QuickServiceSelector
 import { TrustBar } from "@/components/sections/TrustBar";
 import { StatsBar } from "@/components/sections/StatsBar";
 import { WhyTrust } from "@/components/sections/WhyTrust";
+import { ProfilePromise } from "@/components/sections/ProfilePromise";
 import { Accreditations } from "@/components/sections/Accreditations";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { SectionHeading } from "@/components/sections/SectionHeading";
@@ -89,6 +90,9 @@ export default async function HomePage() {
 
       {/* Why families trust EzyHelpers (mirrors live site) */}
       <WhyTrust />
+
+      {/* What every shared profile includes */}
+      <ProfilePromise />
 
       {/* Government / skill-council accreditations */}
       <Accreditations />

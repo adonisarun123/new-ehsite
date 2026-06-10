@@ -19,15 +19,19 @@ export function Header() {
     <header className="sticky top-0 z-40 border-b border-edge/60 bg-ivory/95 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between gap-4 lg:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center" aria-label={`${BRAND.name} home`}>
+        <Link href="/" className="flex items-center gap-2.5" aria-label={`${BRAND.name} home`}>
           <Image
-            src="/logos/ezyhelpers-logo.png"
-            alt={`${BRAND.name} logo`}
-            width={96}
-            height={93}
+            src="/logos/ezyhelpers-mark.png"
+            alt=""
+            aria-hidden
+            width={93}
+            height={64}
             priority
-            className="h-11 w-auto lg:h-12"
+            className="h-9 w-auto lg:h-10"
           />
+          <span className="font-heading text-xl font-semibold tracking-tight text-brand-deep lg:text-2xl">
+            EzyHelpers
+          </span>
         </Link>
 
         {/* Desktop nav */}

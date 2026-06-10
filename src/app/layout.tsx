@@ -4,6 +4,7 @@ import { BRAND } from "@/lib/constants/brand";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { StickyMobileCTA } from "@/components/layout/StickyMobileCTA";
+import { FloatingWhatsApp } from "@/components/layout/FloatingWhatsApp";
 import { Analytics, GtmNoScript } from "@/components/Analytics";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <StickyMobileCTA />
+        <FloatingWhatsApp />
       </body>
     </html>
   );
